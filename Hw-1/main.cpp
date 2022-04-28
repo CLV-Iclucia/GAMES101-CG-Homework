@@ -36,7 +36,7 @@ Eigen::Matrix4f get_projection_matrix(float eye_fov, float aspect_ratio,
 
     Eigen::Matrix4f projection = Eigen::Matrix4f::Identity();
     float fov = tan(eye_fov / 2.0f);
-    float t = fov * zNear;//在此种特殊情况下，都是对称的
+    float t = -fov * zNear;//鍦ㄦ绉嶇壒娈婃儏鍐典笅锛岄兘鏄绉扮殑
     float r = t * aspect_ratio;
     Eigen::Matrix4f ortho= Eigen::Matrix4f::Identity();
     ortho(0, 0) = 1.0f / r;
